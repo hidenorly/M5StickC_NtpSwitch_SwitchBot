@@ -99,6 +99,9 @@ void SwitchBotRemoteController::actionSwitchBot(ACTION_SWITCH_BOT action)
 		BleUtil::BleDevice* pDevice = BleUtil::getFoundAdvertiseDevice(SWITCH_BOT_SERVICE_UUID, SwitchBotUtil::getTargetBleAddr());
 		if( pDevice ){
 			pDevice->tryToConnect();
+      for(int i=0; i<100000 && !pDevice->isConnected(); i++){
+        yield();
+      }
 			pDevice->writeToCharactertistic(SWITCH_BOT_CHARACTERISTIC_UUID, cmdPress[action-ACTION_PRESS], 3);
 //			pDevice->disconnect();
 		}

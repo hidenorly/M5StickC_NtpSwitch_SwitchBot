@@ -267,7 +267,7 @@ void setup() {
   initializeGPIO();
 
   // Initialize LCD
-  M5.Lcd.setRotation(3);
+  M5.Lcd.setRotation(1);
   M5.Lcd.fillScreen(BLACK);
 
   // Initialize SPI File System

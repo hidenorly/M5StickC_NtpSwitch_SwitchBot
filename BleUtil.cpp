@@ -269,6 +269,7 @@ BleUtil::BleDevice::BleDevice(BLEAdvertisedDevice* pDevice, String advertiseServ
 {
   mpDevice = pDevice;
   mAdvertiseServiceUUID = advertiseServiceUUID;
+  mpBleClient = NULL;
 }
 
 BleUtil::BleDevice::~BleDevice()
@@ -382,4 +383,3 @@ BLERemoteCharacteristic* BleUtil::BleDevice::getCharactertistic(String character
 
   return pCharacteristic;
 }
-
