@@ -110,7 +110,7 @@ class TimePoller:public LooperThreadTicker
 
   protected:
     const int NTP_SYNC_DURATION = 60*60;            // 1 hour
-    const int NTP_SYNC_DURATION_NOT_SYNCED = 60*3;  // 3min
+    const int NTP_SYNC_DURATION_NOT_SYNCED = 2;  // 3min
 
     void syncTime(void)
     {

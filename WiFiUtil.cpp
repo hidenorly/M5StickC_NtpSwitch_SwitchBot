@@ -132,6 +132,7 @@ void WiFiUtil::disconnect(void)
 
 void WiFiUtil::handleWiFiClientStatus(void)
 {
+  if( getMode() == WIFI_OFF ) return;
   static int previousStatus = WiFi.status();
   int curStatus = WiFi.status();
 
